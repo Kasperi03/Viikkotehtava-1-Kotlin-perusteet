@@ -1,6 +1,9 @@
 Viikkotehtävä 1 – Kotlin-perusteet ja ensimmäinen Compose-näkymä
 Kuvaus
 
+### APK-tiedosto
+Voit ladata sovelluksen tästä: [app-debug.apk](https://github.com/Kasperi03/Viikkotehtava-1-Kotlin-perusteet/raw/main/ApkBackup/app-debug.apk)
+
 Tämän tehtävän tavoitteena oli opetella Kotlinin perusteita sekä luoda ensimmäinen Android-sovellus Jetpack Composea käyttäen. Sovellus on yksinkertainen tehtävälista, jossa käyttäjä voi tarkastella tehtäviä, merkitä niitä tehdyiksi sekä suodattaa ja järjestää listaa eri tavoin.
 
 Projektissa keskitytään erityisesti domain-logiikan ja käyttöliittymän erotteluun sekä Kotlin-funktioiden käyttöön.

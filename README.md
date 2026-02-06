@@ -1,40 +1,30 @@
-**Viikkotehtävä 3 – Kotlin + Compose: Tehtävälista MVVM + StateFlow**
+**Viikkotehtävä 4 - Navigointi Jetpack Composessa**
 
-**MVVM (Model-View-ViewModel)**
+**Navigointi Jetpack Composessa**
 
-**MVVM on arkkitehtuurimalli, jossa sovelluksen eri osat erotetaan selkeästi:**
+Navigointi Jetpack Composessa tarkoittaa näkymien (Composable-funktioiden) välistä siirtymistä yhden aktiviteetin sisällä. Sovellus käyttää Single-Activity-arkkitehtuuria ja Navigation Compose -kirjastoa.
 
-Model sisältää datan (Task)
+NavController vastaa navigoinnin ohjaamisesta ja reittien vaihtamisesta.
+NavHost määrittelee sovelluksen navigaatiorakenteen ja kertoo, mikä näkymä näytetään milläkin reitillä.
 
-ViewModel hallitsee sovelluksen tilaa ja logiikkaa
+**Sovelluksen navigaatiorakenne**
 
-View (Compose UI) näyttää tiedon ja kuuntelee ViewModelin tilaa
+Sovelluksessa on kaksi pääruutua:
 
-**Hyöty Compose-sovelluksissa:**
+**HomeScreen** (tehtävälista)
 
-UI pysyy yksinkertaisena, koska se ei hallitse logiikkaa
+**CalendarScreen** (kalenterinäkymä)
 
-Tilamuutokset päivittyvät automaattisesti, jolloin Compose recomposoi tarvittavat komponentit
+Käyttäjä voi siirtyä HomeScreeniltä CalendarScreenille ja takaisin NavControllerin avulla. Back-nappi toimii sekä järjestelmän että sovelluksen oman navigaation kautta.
 
-Koodin ylläpito ja testaus helpottuvat
+**MVVM ja jaettu ViewModel**
 
-**StateFlow**
+Sovellus käyttää MVVM-arkkitehtuuria.
+Sama TaskViewModel jaetaan HomeScreenin ja CalendarScreenin välillä, joten ViewModel ei katoa navigoinnin aikana. Molemmat ruudut lukevat ja muokkaavat samaa tilaa, ja muutokset näkyvät heti molemmissa näkymissä.
 
-**StateFlow on Kotlin Coroutines -kirjaston tila- ja tapahtumavirta:**
+**CalendarScreen**
 
-MutableStateFlow: muokattava tila ViewModelissa
-
-StateFlow: UI kuuntelee vain lukuoikeudella
-
-Kun value muuttuu, kaikki kuuntelijat saavat uuden tilan heti
-
-**Hyöty sovelluksessa:**
-
-UI päivittyy automaattisesti, kun tilaa muutetaan ViewModelissa
-
-Ei tarvita imperatiivista päivityskoodia
-
-Sovellus pysyy reaktiivisena ja MVVM-logiikka selkeänä
+CalendarScreen näyttää tehtävät kalenterimaisessa näkymässä. Tehtävät ryhmitellään niiden päivämäärän (dueDay) mukaan, ja jokaisen päivän alla näkyvät siihen kuuluvat tehtävät listana.
 
 **Tekijä:** Kasperi Mustonen
 
